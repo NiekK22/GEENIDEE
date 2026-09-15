@@ -57,4 +57,6 @@ function draw() {
   cirkel.teken();
 
   text(cirkel.aantalRaak,10,50);
+
+  cirkel.aantalRaak++;
 }

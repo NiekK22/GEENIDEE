@@ -7,7 +7,9 @@ var speler = {
   },
   
   toonKaarten() {
-    image(this.getrokkenKaarten[this.getrokkenKaarten.length - 1],0,0);
+    for (var h = 0;h < this.getrokkenKaarten.length;h++) {
+      image(this.getrokkenKaarten[h],this.getrokkenKaarten[h].width*h,0);
+    }
   }
 }
 
@@ -35,6 +37,19 @@ function setup() {
 
 function draw() {
   background('white');
-  speler.trekKaart(kaartSpel);
+  text("Klik (maximaal) vier keer om willekeurig vier kaarten uit een pakje te selecteren.",0,0,canvas.width,canvas.height);
+  
   speler.toonKaarten();
+  
+  if (mouseIsPressed) {
+    if (speler.getrokkenKaarten.length<4) {
+      speler.trekKaart(kaartSpel);
+    }
+    else {
+      fill('red');
+      rect(0,0,canvas.width,canvas.height);
+      fill('white');
+      text("ik zei: maximaal VIER keer!!!",0,0,canvas.width,canvas.height);
+    }
+  }
 }

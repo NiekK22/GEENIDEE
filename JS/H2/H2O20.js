@@ -67,7 +67,7 @@ function setup() {
   canvas.parent('processing');
   frameRate(10);
   raster.berekenCelGrootte();
-  jos.stapGrootte = 2*raster.celGrootte;
+  jos.stapGrootte = 2 * raster.celGrootte;
 }
 
 function draw() {
